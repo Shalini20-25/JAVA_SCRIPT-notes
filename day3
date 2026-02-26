@@ -1,0 +1,160 @@
+//                                         MEMORY MANAGEMENT
+// code is present inside harddisk 2. this code is taken to RAM via operating system 3.the instructions written in the code 
+// is then executed by cpu
+//RAM is the temporary storage  and ssd/harddisk is permanent storage 
+//basically RAM has 2 parts 1.stack 2.queue . elements sotred in stack consumes lesser memory than elements stored in heap
+
+
+//                                           OPERATORS
+//                                   arithematic operators
+console.log(2+5);// output: 7
+console.log(2-5);// output:-3
+console.log(2*5);// output:10
+console.log(6/2);// output:3
+console.log(5%2);// output:1
+console.log(5**3);// output:125 (power)
+
+//                                           assignment operator
+let x=10;
+let y=20;
+x=x+y;   // you can write it as x+=y it means same
+console.log(x);//output:30
+x=x-y;   // is same as x-=y
+console.log(x);//output is 10    (30-20)
+
+//                                     comparision operator
+// difference between == and ===  1. == can can convert a number to a string if comparison is being done in
+//  2 incompatible data types and then compare them ( let x="20";  let y=20;  console.log(x==y);  output is true)
+// but burt but 2. === do not convert the data type it strictly check whether one variable is equal to another one or not 
+// ===will return true only when the comparision is done btw 2 same data type
+
+let x=10;
+let y=20;
+console.log(x>y);//output is false
+console.log(x<y);//output is true
+console.log(x==y);//output :false   similarly there is >= , <= , === operator as well in comparision
+
+
+//                                      conversion of data
+let z="20";// here z is string
+let a=number(z);// converted into number
+console.log(z);// output : number
+
+let a="121abc";//combination of string and number
+let b=number(a);
+console.log(b);//output is NaN(not a number)(type of NaN is number)
+console.log(0/0);// output NaN
+
+//                                     string to number conversion
+let a=10;
+let b=string(a);
+console.log(typeof b);//string
+
+//                                  boolean--> number
+// (if it is true it will convertinto 1 and if it is false it will convert into 0);
+console.log(number(true));//output:1
+console.log(number(false));//output:0
+console.log(number(null));//output:0
+console.log(number(undefined));//output:NaN(not a number)
+
+//                                   boolean-->string
+console.log(string(true));//output:"true"
+console.log(string(false));//output:false
+console.log(typeof string(true));//output:string
+console.log(typeof string(false));//output:string
+
+//                                     number-->boolean
+console.log(boolean(10));//output: true(as any number other 0 is considered true both +ve and -ve)
+console.log(boolean(-20));//output: true
+console.log(boolean(0));//output: false
+
+//                                         string-->boolean
+console.log(boolean("shalini"));//output: true(no matter wht are you writing inside (" ") as long as it has something inside it will return true)
+console.log(boolean("sfghjmv"));//output: true
+console.log(boolean(""));//output: false(it is because it is empty string)
+console.log(boolean(null));//output: false
+console.log(boolean(undefined));//output: false
+
+//some challenges in computer sience
+let a=0.1;
+let b=0.2;
+let c= a+b;
+console.log(c);// expected outpt is 0.3 but it is not the actual output its 0.30000000000000000000004
+//this prb arises due to the incomplete conversion of decimal number into binary . so in order to perform the calculation approximate binary value of numbers are taken
+//(you can solve this prb by treating it not like number but like string) we r doing this because in case of strings it reads each no as a string and do not alter it in boolean
+
+//                                     RULES
+//null is loosely equal to undefined only and only
+console.log(null==undefined);//outpt: true
+console.log(nul===undefined);//output: false(it id beacuse === is used to strictly check whether it is actually equal or not)
+console.log(nul==0);//output: false
+console.log(nul=="");//output: false
+console.log(nul==false);//output: false
+console.log(nul==true);//output: false
+
+// the equivalent value of null in number is equal to 0
+//in case of operators like(>,<,>=,<=)null behaves like number
+//in case of operators like(>,<,>=,<=)undefined behaves like NaN
+console.log(null>=0);//op: true as null is treated 0 here
+console.log(null<=0);//op: true 
+console.log(null>0);//op: false(0 cant be greater or smaller than 0)
+console.log(null<0);//op: false
+console.log(null>=undefined)//op:false there is no comparision among them as one is 0 another one is not a number
+console.log(undefined>=0)//op:false
+
+//if we r comparing 2 different type then both the elements first convrt their self into number then comparision is performed between them
+console.log(NaN==NaN);//false
+
+//                                           LOOPS WORKING IN JAVASCRIPT
+// post increment i++ post decrement i--
+let g=10;
+let f=g++;
+console.log(f);// output: 10 and then g becomes 11 means the value of g will later increaseafter assignment
+let k=++g;
+console.log(k);// output: g becomes 11 first and then its value is given to k which is now equals to 11
+// pre increment ++i pre decrement --i same like increment
+
+for(int i=0;i<n;i++){
+    console.log(i)
+}//output : 0 1 2 3 4 5 6 7 8 9  when n is 10 in next like after each iteration
+
+// example                                       while loop
+// (if the while condition is not satisfie loop will not run)
+let i=0;//initialise
+while(i<10){//breaking condition which will check after each iteration
+    console.log(i);
+    i++;
+}
+
+// example                               do while loop
+//  (this is when we want to execute the loop atleast once)
+let i=0;
+do{
+    console.log(i);
+    i++;
+}while(i<10);// break condition
+
+// example of                                 if-else loop / if-else if-else(multiple condition case)
+let age=15;
+if(age>=18){
+    console.log("yes eligible for vote");
+}else{
+    console.log("not eleigible");
+}//output: not eligible
+
+
+//                                    LOGICAL OPERATORS
+//&& ( and ),|| (or)
+// in case of and output is true when all the conditions are true. it will give false as output if anyone one of the condition is false
+// in case of or operator it will give false when all the condiitions are false , if anyone one of the condition is true the will give true in result
+console.log(true&& true);// true
+console.log(false||false);// false
+
+// example
+let a="shal";// considered as true
+let b="shiv";
+console.log(a&&b);//output is shiv(phle a check hoga if true toh second value as it is return ho jayegi)
+
+let a="";// considered as false
+let b="shiv";
+console.log(a&&b);// false(phli value hi flse h toh ye dushre condition ko check ni karegi )
