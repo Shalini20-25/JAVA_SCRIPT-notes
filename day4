@@ -1,0 +1,74 @@
+//                                      NUMBERS AND MATH OBJECT
+// in case of object comparision is done on the the basis of reference not on the basis of value
+//non primitive: comparison is doen on the basis of reference 
+// primitive: comparison is done on the basis of value
+// you can fix numbers after decimal places to a fixed point with the help of (toFixed)
+let b=20.2435;
+console.log(b.tofixed(2));// output: 20.24 (it will no change the actual value of b it will remain 20.2435)(it will string type )
+
+//use of (toPrecision) it is used to get value starting from 1st digit to mentioned one
+let b=20.2435;
+console.log(b.toPrecision(5));//output: 20.23 it will also return string type value
+
+//use of (toString) used to convert the value in string                     
+let b=20.2435;
+console.log(b.toString())//output:it will also return string type value
+
+// creation of number as object
+let a= new Number(20);
+let b=30;
+console.log(typeof a);//object
+console.log(typeof b);//number
+
+// comparison between 2 objects
+let a= new Number(20);
+let b=new Number(20);
+console.log( a==b);// output : false(because it will give true when both point to the same object but here a is pointing to something else and b is pointing to something else(location)
+
+let a= new Number(20);// let its location be x;
+let b=a// bis also marked to the same location
+console.log( a==b);// output : true (because both points to the same location)+
+
+console.log(Boolean(new Number(0)));// true(it should give as false but as new number convert it into object it will give true because object only 
+// (whether a number is assigned some memory or not , if yes then it will return true))
+console.log(Boolean(new Number(1)));//true
+console.log(Boolean(Null));// output: true (because null is also a type of object and it means i'm not refering to any memory in heap)
+
+
+//                                           MATH
+
+// if you have -ve value and you want to make it positive then use (Math.abs())
+console.log(Math.abs(-4));//output: 4
+console.log(Math.PI);//output:3.141592...
+
+console.log(Math.LN10);//output: 2.30528....
+
+console.log(Math.SQRT2);//output: 1.41421...
+console.log(Math.ceil(2.3));//otput:3
+console.log(Math.floor(2.3));//outpuut: 2
+
+console.log(Math.random());// output: it will give new value everytime you run it so basically it will give you the random values
+// it will generate vals between [0,1) where 0 is included and 1 is not included
+console.log(Math.floor(Math.random()*10));// this will make the range of random value from(0-9)
+console.log(Math.floor(Math.random()*10+1));//his will make the range of random value from(1-10)
+
+//formula
+//math.random()*totalNoOfOutcomes    it will give numbers from 0 to n-1 if taken with math.floor
+//Math.floor(math.random()*n)+shift   it will shift your number by 1,2,3,4,....etc as you want
+
+
+
+// example (15-25)formula     math.floor(math.random()(max-min+1))+min for getting the values in desired range
+// we will use this concept for otp generation 
+
+console.log(Math.random());//0to1
+console.log(Math.random()*11);// as 11 numbers exist between 15 to25 thats why we multiplied it by 11
+console.log(Math.floor(Math.random()*11));//it will give you integer value from 0 to 10 and will never exceed 11
+console.log(Math.floor(Math.random()*11)+15);//this will give the range
+
+// using the abv formula for generating 4 digit otp in range(1000-9999)
+console.log(Math.floor(Math.random()*(9999-1000+1))+1000);//this will give random numbers between 1000 to 9999
+// but we will not use this for otp generation - 
+// Predictability:math.random() in JavaScript is not cryptographically secure. It uses a pseudo-random algorithm that can be guessed or reproduced if someone knows the internal state.
+// Security Risk:OTPs are used for authentication. If an attacker can predict the random numbers, they can guess your OTP.
+
