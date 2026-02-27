@@ -1,0 +1,34 @@
+//                            date object
+// indexing of months: (0 to 11)
+//indexing of days of week:(1 to 7)
+const now = new Date();//creates a Date object in JavaScript representing the current date and time at the moment it’s executed.
+
+console.log(now);//output: 2026-02-22T03:54:48.296Z (it is giving us the- UTC stands for Coordinated Universal Time.
+// It’s the primary time standard used worldwide to regulate clocks and time
+
+console.log(now.toString());//output:Sun Feb 22 2026 09:28:42 GMT+0530 (India Standard Time) this will give the current and correct time
+// it is taking time from system. but now the quest is if js has no control of system then how it is taking time of system???
+
+console.log(now.toISOString());//2026-02-23T15:11:36.322Z
+console.log(now.toLocaleString());//23/2/2026, 8:41:36 pm it will tell the current time of india
+
+console.log(now.getDate());//23 it will give today's DATE
+console.log(now.getDay());//1 beacuse it is the first day of week(monday)
+// similarly 2 for tuesday 3 for wednesday and so on.......
+
+console.log(now.getMonth());//1 now the quest is this is feb and it is showing 1 because it strt from (0,1,2,3,4...11)
+console.log(now.getFullYear());//2026 yr
+console.log(now.getHours());//21 it will give the current hour 
+console.log(now.getSeconds());//32 it will second
+
+// creation of current date: (year,month,date, hour,minute,second,milisecond)
+const now3  = new Date(2026,1,23,8,25,16,125);
+console.log(now3);
+// but in output you will observe that feb will be presented as 2 but why?? this is the inconsistency
+
+const now2= Date.now();
+console.log(now2);//output:1771863278871(time stamp is same everywhere) it will give output in the form of milisec
+
+// utc time is same everywhere
+// india's time from UTC is 5:30 hrs ahead or(UTC+5:30)is current time in india
+
