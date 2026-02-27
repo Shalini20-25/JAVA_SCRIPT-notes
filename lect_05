@@ -1,0 +1,122 @@
+//                                   STRING 
+//method to create string 1. " " 2.' ' 3.` `(bactick)
+// in case of "" '' if you move to the next line while writing string it will throw an error but in case of backtick
+//  it will not,u are allowed to your current string in multiline under this
+
+const str1=" shal";
+const str2='shalu';
+const str3=`pick`;
+console.log(str1,str2,str3);// output: all the strings will be printed in same line
+const str4=`hi r u there
+let's catch up`;
+console.log(str4);//output: hi r u there
+                         // let's catch up` (you can see here you r getting your output in next line)
+
+//how you can access the value in string
+const day=16;
+const str5=`i was born on day`;
+console.log(str5);//output: i was born on day    (you will not get the value of day at day in string)
+
+const day=16;
+const str5=`i was born on ${day}`;// this is used to access the value of day
+console.log(str5);//output: i was born on 16 
+
+//                             length
+const str=`hi hlo i'm a girl`;
+console.log(str.length);//it will give me the lenth of string which also include space 17
+
+//                            accessing elements of string
+// indexing will start from 0
+const str=`hi hlo i'm a girl`;
+console.log(str[0]);//output : h
+
+//                        immmutability of string
+// means you cannot change the string via indexing
+const str=`hi hlo i'm a girl`;
+str[3]=`j`;
+console.log(str);//it will give you the same str without any change  (hi hlo i'm a girl)
+
+//                      operations on string
+const str=`hi shalini singh`;
+console.log(str.toUpperCase()); // output:Hi Shalini Singh(all the 1st letter of words will capitalized in the given string)
+// whatever changes we r making it will not change the original string . new string will be given to make changes
+
+const str=`Hi Shalini Singh`;
+console.log(str.toLowerCase()); //output:hi shalini singh(all the 1st letter of words will converted into lower case in the given string)
+
+//                           searching of substring
+//substring must contain the continuous character it should not be any random char of string . it will return -1 if you try to do so
+const str=`Hi Shalini Singh`;
+console.log(str.indexOf(`Sha`));//output: 3 (it will return you the starting index of that substring)
+console.log(str.indexOf(`Sgh`));//output= -1
+
+const str=`Hi Shalini Singh Shalini`;
+console.log(str.lastIndexOf(`Sha`));//output: it will give you index where shalini occurs last time
+
+const str=`Hi Shalini Singh Shalini`;
+console.log(str.includes("Sha"));//output: true  (it will return true if sha s present in given string or else return false)
+console.log(str.includes('hlo'));//output: false
+
+//                                   slicing of strings
+// str.slice(starting index, end index)  where your starting index is included but ur end index is not included
+const str=`Hi Shalini Singh Shalini`;
+console.log(str.slice(4,9));//output: halin
+console.log(str.slice(3));// here only starting index is given so by default it will take the end index till last of given string
+console.log(str.slice());// it will return the entire string without any change and take initial index 0 and end as last index by default
+console.log(str.slice(,5));// In JavaScript, the slice() method requires at least one valid argument. Writing str.slice(,5) isn’t valid because the first parameter is missing.
+
+//in case of negative indexing (-1,end index) here alse end index is not included
+const str=`Hi Shalini Singh Shalini`;
+console.log(str.slice(-4));//it will starting index -1 by default and goes till -4 where -4 is not included
+
+// for slicing we can also use str. substring but here negative indexing is not allowed like slice ,only positive is allowed 
+const str=`Hi Shalini Singh Shalini`;
+console.log(str.slice(4,9));//output: halin
+
+//                                        concatenation of strings
+// you can add multiple str
+const a="shal";
+const b="singh";
+console.log(a+b);//output: shalsingh
+
+const a="shal";
+const b="singh";
+console.log(a+" "+b);//output: shal singh (this will add space between them)
+
+console.log(24+"hii");//output: 24hii
+console.log(20+30+"shal");//output: 50shal (it will move from l to r while solving )
+
+//                               replacement to substring
+// as our string is immutable so whatever changes r u dong it will be performed in copy of that string
+// str.replace(string to replace, from to replace) (it will replace the first occurence of that substring)
+const str=`Hi Shalini Singh Shalini`;
+console.log(str.replace("lin","gfg"));//output: Hi Shagfgi Singh Shalini
+
+// str.replaceAll(string to replace, from to replace) (it will replace all the occurence of that substring)
+const str=`Hi Shalini Singh Shalini`;
+console.log(str.replaceAll("lin","gfg"));//output: Hi Shagfgi Singh Shagfgi
+
+//                                   trim in space
+// The trim() method in JavaScript is used to remove whitespace from both ends of a string. 
+// It’s especially handy when dealing with user input, where extra spaces at the beginning or end can cause issues.(only strt and end space not any mid space)
+//it will not change the original string but return the another one by removeing extra space
+
+const str=` Shalini Singh `;
+console.log(str.trim());//output:Shalini Singh(spaces from beg and end is removed)
+
+//                                       split("pass parameter here")
+//The split() method in JavaScript is used to divide a string into an array of substrings based on a specified separator.
+let text = "How are you doing today?";
+let words = text.split(" ");// split by space
+console.log(words);// ["How", "are", "you", "doing", "today?"]
+
+
+
+
+ 
+
+
+
+
+
+
